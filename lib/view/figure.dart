@@ -26,6 +26,12 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _resetCounter() {
+    setState(() {
+      _counter = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,18 +57,34 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(30.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            FloatingActionButton(
-              onPressed: _decrementCounter,
-              tooltip: 'Decrement',
-              child: const Icon(Icons.remove),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                FloatingActionButton(
+                  onPressed: _resetCounter,
+                  tooltip: 'Reset',
+                  child: const Icon(Icons.refresh),
+                ),
+              ],
             ),
-            FloatingActionButton(
-              onPressed: _incrementCounter,
-              tooltip: 'Increment',
-              child: const Icon(Icons.add),
+            const SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                FloatingActionButton(
+                  onPressed: _decrementCounter,
+                  tooltip: 'Decrement',
+                  child: const Icon(Icons.remove),
+                ),
+                FloatingActionButton(
+                  onPressed: _incrementCounter,
+                  tooltip: 'Increment',
+                  child: const Icon(Icons.add),
+                ),
+              ],
             ),
           ],
         ),
