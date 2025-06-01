@@ -41,10 +41,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>CADisableMinimumFrameDurationOnPhone</key>
-	<true/>
+	<!-- <key>CADisableMinimumFrameDurationOnPhone</key>
+	<true>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
   <key>io.flutter.embedded_views_preview</key>
-	<true/>
+	<true/> -->
 </dict>
 </plist>
