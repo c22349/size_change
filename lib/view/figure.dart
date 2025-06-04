@@ -14,7 +14,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-      _counter++;
+      final screenSize = MediaQuery.of(context).size;
+      final newSize = 50 + ((_counter + 1) * 10);
+      if (newSize <= screenSize.width && newSize <= screenSize.height) {
+        _counter++;
+      }
     });
   }
 
