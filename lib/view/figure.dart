@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:size_change/app_constants.dart';
+import '/app_constants.dart';
+import '/view/settings_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
