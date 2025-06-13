@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:size_change/app_constants.dart';
-import 'package:size_change/view/figure.dart';
+import '/app_constants.dart';
+import '/view/figure.dart';
 
 void main() {
   runApp(const MyApp());

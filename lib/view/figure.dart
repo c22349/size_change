@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:size_change/app_constants.dart';
+import '/app_constants.dart';
+import '/view/settings_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -46,7 +47,10 @@ class _MyHomePageState extends State<MyHomePage> {
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () {
-              // TODO: 設定画面への遷移を実装
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingsPage()),
+              );
             },
           ),
         ],
