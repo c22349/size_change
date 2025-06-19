@@ -47,9 +47,8 @@ class _MyHomePageState extends State<MyHomePage> {
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const SettingsPage()),
-              );
+              print('Settings button pressed');
+              Navigator.of(context).pushNamed('/settings');
             },
           ),
         ],
