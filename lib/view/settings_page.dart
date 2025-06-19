@@ -5,6 +5,7 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('SettingsPage build called'); // デバッグ用ログ
     return WillPopScope(
       onWillPop: () async => true,
       child: Scaffold(
