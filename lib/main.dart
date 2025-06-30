@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter/services.dart'; 
 import '/app_constants.dart';
 import '/view/figure.dart';
 import '/view/settings_page.dart';
@@ -21,10 +21,8 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  final SettingModel settingModel;
-
+  final SettingModel settingModel;  
   const MyApp({super.key, required this.settingModel});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
