@@ -4,8 +4,13 @@ import '/app_constants.dart';
 import '/view/figure.dart';
 import '/view/settings_page.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+void main() {
+  runApp(const MyApp());
+}
+
+//設定画面の処理
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   // 画面の向きを縦向きに固定
   await SystemChrome.setPreferredOrientations([
