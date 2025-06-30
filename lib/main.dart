@@ -15,6 +15,7 @@ void main() async {
 
   // SettingModelの初期化
   final settingModel = SettingModel();
+  // 設定の読み込み
   await settingModel.init();
 
   runApp(MyApp(settingModel: settingModel));
