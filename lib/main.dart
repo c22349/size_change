@@ -8,6 +8,7 @@ void main() {
   runApp(const MyApp());
 }
 
+//設定画面の処理
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
