@@ -4,26 +4,24 @@ import '/app_constants.dart';
 import '/view/figure.dart';
 import '/view/settings_page.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  SystemChrome.setPreferredOrientations([
+  // 画面の向きを縦向きに固定
+  await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
-  ]).then((_) async {
-    final settingModel = SettingModel();
-    await settingModel.init();
-    runApp(MyApp(settingModel: settingModel));
-  });
+  ]);
+
+  // SettingModelの初期化
+  final settingModel = SettingModel();
+  await settingModel.init();
+
+  runApp(MyApp(settingModel: settingModel));
 }
 
 class MyApp extends StatelessWidget {
-  final SettingModel settingModel;
-  
+  final SettingModel settingModel;  
   const MyApp({super.key, required this.settingModel});
   @override
   Widget build(BuildContext context) {
