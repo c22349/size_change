@@ -1,31 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter/services.dart'; 
 import '/app_constants.dart';
 import '/view/figure.dart';
 import '/view/settings_page.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+void main() {
+  runApp(const MyApp());
+}
 
-  // 画面の向きを縦向きに固定
-  await SystemChrome.setPreferredOrientations([
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
-  ]);
-
-  // SettingModelの初期化
-  final settingModel = SettingModel();
-  // 設定の読み込み
-  await settingModel.init();
-
-  runApp(MyApp(settingModel: settingModel));
+  ]).then((_) async {
+    final settingModel = SettingModel();
+    await settingModel.init();
+    runApp(MyApp(settingModel: settingModel));
+  });
 }
 
 class MyApp extends StatelessWidget {
   final SettingModel settingModel;
-
+  
   const MyApp({super.key, required this.settingModel});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
