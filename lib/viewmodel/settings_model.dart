@@ -12,4 +12,16 @@ class SettingModel with ChangeNotifier {
     final setting = SettingModel.fromJson(prefs.getString("setting") ?? "{}");
     return setting;
   }
+
+  // アプリ起動時に呼び出すメソッド
+  Future<void> loadLocale() async {
+    final prefs = await SharedPreferences.getInstance();
+    String? savedLanguageCode = prefs.getString('language');
+    Locale deviceLocale = getDeviceLocale();
+    String defaultLanguageCode =
+        deviceLocale.languageCode == 'ja' ? 'ja' : 'en';
+    _currentLocale = Locale(savedLanguageCode ?? defaultLanguageCode, '');
+    notifyListeners();
+    _soundEnabled = prefs.getBool('soundEnabled') ?? true;
+  }
 }
