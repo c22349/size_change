@@ -24,4 +24,16 @@ class SettingModel with ChangeNotifier {
     notifyListeners();
     _soundEnabled = prefs.getBool('soundEnabled') ?? true;
   }
+
+  void updateSoundSetting(bool isEnabled) {
+    _soundEnabled = isEnabled;
+    notifyListeners();
+  }
+
+  void setSoundEnabled(bool value) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('soundEnabled', value);
+    _soundEnabled = value;
+    notifyListeners();
+  }
 }
