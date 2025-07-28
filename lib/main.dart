@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; 
+import 'package:flutter/services.dart';
 import '/app_constants.dart';
 import '/view/figure.dart';
 import '/view/settings_page.dart';
+import '/viewmodel/settings_model.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+void main() async {
+  // Flutterバインディングを初期化
+  WidgetsFlutterBinding.ensureInitialized();
 
   // 画面の向きを縦向きに固定
   await SystemChrome.setPreferredOrientations([
@@ -25,8 +23,9 @@ class MyApp extends StatelessWidget {
 }
 
 class MyApp extends StatelessWidget {
-  final SettingModel settingModel;  
+  final SettingModel settingModel;
   const MyApp({super.key, required this.settingModel});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
