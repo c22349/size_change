@@ -5,20 +5,18 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('SettingsPage build called'); // デバッグ用ログ
-    return WillPopScope(
-      onWillPop: () async => true,
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: const Text('設定'),
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () => Navigator.of(context).pop(),
         ),
-        body: const Center(child: Text('設定画面')),
+        title: const Text('設定'),
+        centerTitle: true,
+        backgroundColor: const Color(0xFFEEEDF3),
       ),
+      body: const Center(child: Text('設定画面', style: TextStyle(fontSize: 24))),
+      backgroundColor: const Color(0xFFEEEDF3),
     );
   }
 }
